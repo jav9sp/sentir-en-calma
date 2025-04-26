@@ -1,0 +1,14 @@
+[
+  {
+    "titulo": "Explorar nuestro mundo emocional",
+    "resumen": "Las emociones son la brújula que guía nuestra vida. Acá exploramos cómo aproveharlas de mejor manera.",
+    "link": "/blog/explorar-nuestro-mundo-emocional",
+    "imagen": "/3.jpg"
+  },
+  {
+    "titulo": "Desentrañar el misterio de la Identidad Personal",
+    "resumen": "En el vasto paisaje de la vida, uno de los viajes más apasionantes es la exploración de la identidad personal. ¿Quiénes somos realmente?",
+    "link": "/blog/desentranar-el-misterio-de-la-identidad-personal",
+    "imagen": "/4.jpg"
+  }
+]

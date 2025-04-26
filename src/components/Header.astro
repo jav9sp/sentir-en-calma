@@ -1,0 +1,88 @@
+---
+const menuItems = ["Conóceme", "Mi Trabajo", "Valoraciones", "Blog"];
+const pathname = Astro.url.pathname;
+---
+
+<!-- TODO: Revisar estilos versión mobil -->
+<header
+  class="px-6 py-4 sticky top-0 left-0 w-full z-50 bg-white md:bg-transparent">
+  <div
+    class="flex items-center md:px-4 md:py-2 justify-between lg:bg-transparent backdrop-blur-sm md:shadow-md md:rounded-2xl">
+    <div class="logo">
+      <a href="/"
+        ><img class="w-16 h-16" src="/logo.png" alt="Logo Sentir en Calma" /></a
+      >
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="desktop hidden md:flex gap-6">
+      <a href="/">Inicio</a>
+      {
+        pathname == "/" &&
+          menuItems.map((item) => (
+            <a href={`#${item.replace(/\s+/g, "-").toLowerCase()}`}>{item}</a>
+          ))
+      }
+      <a href="/recursos">Recursos</a>
+    </nav>
+
+    <!-- Mobile Menu Icon -->
+    <div
+      class="menu-icon md:hidden cursor-pointer relative w-8 h-6 flex flex-col justify-between"
+      id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="/">Inicio</a>
+  {
+    pathname == "/" &&
+      menuItems.map((item) => (
+        <a href={`#${item.replace(/\s+/g, "-").toLowerCase()}`}>{item}</a>
+      ))
+  }
+  <a href="/recursos">Recursos</a>
+</nav>
+
+<!-- Script para toggle -->
+<script type="module">
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const header = document.querySelector("header");
+
+  function closeMenu() {
+    menuToggle.classList.remove("open");
+    mobileMenu.classList.remove("open");
+  }
+
+  // Abrir/cerrar al hacer clic en el ícono
+  menuToggle.addEventListener("click", (e) => {
+    e.stopPropagation(); // evita que el clic se propague al documento
+    menuToggle.classList.toggle("open");
+    mobileMenu.classList.toggle("open");
+  });
+
+  // Cerrar menú al hacer clic en un enlace dentro del menú móvil
+  const links = mobileMenu.querySelectorAll("a");
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
+
+  // Cerrar menú si se hace clic fuera del header o del menú
+  document.addEventListener("click", (e) => {
+    const target = e.target;
+    const isInsideHeader = header.contains(target);
+    const isInsideMenu = mobileMenu.contains(target);
+
+    if (!isInsideHeader && !isInsideMenu) {
+      closeMenu();
+    }
+  });
+</script>

@@ -1,0 +1,111 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BotonAgendar from "../components/Button.astro";
+import Carousel from "../components/Carousel.astro";
+import Testimonios from "../components/Testimonies.astro";
+import Blog from "../components/Blog.astro";
+import servicios from "../data/servicios.json";
+---
+
+<Layout title="Inicio | Sentir en Calma" description="">
+  <!-- Hero Principal -->
+  <section
+    class="flex flex-col md:flex-row items-center justify-center py-20 px-4 text-center gap-8">
+    <div class="space-y-8">
+      <p class="text-2xl">
+        Te doy la bienvenida a tu espacio <span class="text-[#69956C] font-bold"
+          >Sentir en Calma</span
+        >
+      </p>
+      <h1 class="tangerine-bold text-4xl font-bold text-gray-800 mb-4">
+        Soy Belén Torres, <br /> Psicóloga y Psicoterapeuta
+      </h1>
+      <p class="text-lg text-gray-700 max-w-xl mx-auto">
+        Acompañamiento psicológico para reconectar con tus emociones y lograr tu
+        equilibrio emocional.
+      </p>
+      <BotonAgendar />
+    </div>
+    <div class="h-80 w-80 object-cover rounded-full overflow-hidden shadow-lg">
+      <img src="/foto-belen-2.jpeg" alt="" />
+    </div>
+  </section>
+
+  <!-- Sobre Mí -->
+  <section
+    id="conóceme"
+    class="py-16 px-4 text-center space-y-4 bg-[#69956C]/60">
+    <h2 class="text-3xl font-semibold text-gray-800 mb-4">Conóceme</h2>
+    <p class="text-gray-800 text-lg max-w-2xl mx-auto">
+      Soy psicóloga y psicoterapeuta, especializada en el acompañamiento
+      psicológico de adultos y parejas que buscan comprenderse mejor, sanar
+      heridas emocionales y avanzar hacia una vida más auténtica, libre y plena.
+    </p>
+    <p class="text-gray-800 text-lg max-w-2xl mx-auto">
+      Trabajo desde un enfoque integrador, con base en la Terapia Focalizada en
+      las Emociones, el enfoque humanista y las terapias de tercera generación.
+      Integro recursos que promueven la conciencia emocional, la autoaceptación,
+      la autocompasión y el compromiso con aquello que da sentido a tu vida.
+    </p>
+    <p class="text-gray-800 text-lg max-w-2xl mx-auto">
+      Mi principal foco es ayudarte a observar tus emociones desde otra
+      perspectiva para que así logres gestionarlas y utilizarlas de manera
+      efectiva. Este espacio nace tras observar que con frecuencia las personas
+      escapan de sus emociones, dejándolas en un espacio en donde se
+      invisibilizan y se vuelven aún más desafiantes, por esto, “sentir en
+      calma” apunta a aprender a recibir compasiva y amablemente lo que sientes
+      interiormente, para así darle prioridad a tus necesidades emocionales.
+    </p>
+    <p class="text-gray-800 text-lg max-w-2xl mx-auto">
+      Este es un espacio confidencial, ético y sin juicios, donde puedes
+      detenerte, escucharte y comenzar a construir la versión de ti mismo/a que
+      deseas habitar. Te acompaño a tu ritmo, respetando tus tiempos, tus
+      valores y tu historia.
+    </p>
+  </section>
+
+  <!-- Servicios -->
+  <section id="mi-trabajo" class="py-16">
+    <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">
+      ¿De qué manera puedo ayudarte?
+    </h2>
+    <Carousel elements={servicios} />
+    <BotonAgendar />
+  </section>
+
+  <!-- Testimonios -->
+  <section id="valoraciones" class="py-16">
+    <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">
+      Valoraciones
+    </h2>
+
+    <h3 class="text-xl italic text-center my-6">Experiencia Destacada</h3>
+
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="bg-white p-6 rounded-xl shadow-md text-center my-6">
+        <p class="text-gray-600 italic mb-4">
+          "Fui consultante de Belén, una gran profesional, una psicóloga que
+          logra plasmar en la práctica clínica valores y principios con su
+          profesionalismo, estoy muy conforme ya que las sesiones me ayudaron a
+          salir a flote luego de pasar por situaciones de Acoso laboral, es una
+          profesional que desde la primera sesión conecta con las necesidades
+          emocionales, logra identificar las debilidades y trabajar de forma
+          efectiva y eficiente, por lo que los resultados se comienzan a
+          experimentar desde el inicio... Sin duda la recomiendo 100% y escribo
+          esta reseña para que más personas conozcan de ella y los pueda
+          ayudar... Gracias por todo Belén espero más personas tengan la
+          oportunidad de conocerte y así los ayudes."
+        </p>
+        <span class="text-sm font-semibold text-green-600"> – Carlos </span>
+      </div>
+    </div>
+
+    <Testimonios />
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" class="py-16 bg-[#69956C]/60">
+    <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Blog</h2>
+    <Blog />
+  </section>
+</Layout>

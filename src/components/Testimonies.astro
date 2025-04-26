@@ -1,0 +1,16 @@
+---
+import comments from "../data/comments.json";
+---
+
+<div class="max-w-4xl mx-auto px-6 grid gap-8 md:grid-cols-3">
+  {
+    comments.map((testi) => (
+      <div class="bg-white p-6 rounded-xl shadow-md text-center">
+        <p class="text-gray-600 italic mb-4">"{testi.mensaje}"</p>
+        <span class="text-sm font-semibold text-green-600">
+          – {testi.nombre}
+        </span>
+      </div>
+    ))
+  }
+</div>

@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Terapia Individual",
+    "description": "Espacio personalizado donde te acompañaré a enfrentar diversos desafíos, desarrollar recursos y promover tu autoconocimiento."
+  },
+  {
+    "title": "Terapia de Pareja",
+    "description": "Espacio en el que de manera colaborativa trabajaremos en la comunicación abierta para fortalecer la conexión y comprensión mutua."
+  },
+  {
+    "title": "Regulación emocional",
+    "description": "Cuando las emociones se sienten intensas, confusas o difíciles de manejar, puedes aprender a reconocerlas, nombrarlas y transitarlas sin reprimirlas ni dejarte arrastrar por ellas. La terapia es un espacio para desarrollar una relación más saludable con tu mundo emocional."
+  },
+  {
+    "title": "Ansiedad",
+    "description": "Cuando la mente no para, el cuerpo se agota y las preocupaciones se vuelven constantes, la ansiedad puede limitar tu día a día. En terapia te acompaño a reconocer tus síntomas, identificar sus raíces y desarrollar herramientas para recuperar calma, claridad y confianza."
+  },
+  {
+    "title": "Depresión",
+    "description": "A veces, la vida pierde color, el cansancio emocional pesa y cuesta encontrar motivación. Si te sientes desconectada/o, sin energía o sin ganas, podemos trabajar para que reconectes con tus emociones, tu historia y tus recursos internos."
+  },
+  {
+    "title": "Autoestima",
+    "description": "Si te cuesta valorarte, eres muy exigente contigo misma/o o sientes que no estás “a la altura”, en terapia puedes comenzar a cultivar una mirada más compasiva, realista y amorosa hacia ti misma/o."
+  },
+  {
+    "title": "Crisis personales y búsqueda de sentido",
+    "description": "Etapas de cambio, decisiones importantes, necesidad de reencontrarte con tu propósito. La terapia es un espacio para detenerte, clarificar lo que sientes y abrir nuevas posibilidades."
+  },
+  {
+    "title": "Conflictos de pareja y vínculos",
+    "description": "Trabajo con parejas e individuos que desean comprender sus dinámicas, mejorar la comunicación, fortalecer el vínculo o enfrentar situaciones difíciles con más claridad y respeto."
+  },
+  {
+    "title": "Autovalidación y aceptación personal",
+    "description": "Si sientes que necesitas aprobación de los demás para sentirte valiosa/o, o te cuesta confiar en tu propia mirada, en terapia puedes aprender a escucharte, reconocer tus emociones y validar lo que sientes, sin depender del juicio externo."
+  },
+  {
+    "title": "Procesos de cambio personal y crecimiento",
+    "description": "A veces sentimos que queremos algo distinto, pero no sabemos por dónde empezar. En terapia te acompaño a clarificar lo que necesitas, sortear bloqueos internos y avanzar hacia una vida más coherente con tus valores y deseos."
+  }
+]

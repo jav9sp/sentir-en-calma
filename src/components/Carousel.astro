@@ -1,0 +1,90 @@
+---
+interface Props {
+  elements: {
+    title: string;
+    description: string;
+  }[];
+}
+
+const { elements } = Astro.props;
+---
+
+<div class="relative w-full mx-auto overflow-hidden" id="carrusel">
+  <!-- ? Puede usar flechas o puntos -->
+  <!-- ? Modificar script dependiendo cuál usar -->
+  <!-- <div class="arrow left" id="prevBtn">&lt;</div> -->
+
+  <div class="flex transition-transform duration-1000" id="carruselWrapper">
+    {
+      elements.map((item) => (
+        <div class="min-w-full px-2">
+          <div class="flex flex-col items-center gap-4 mx-auto rounded shadow-lg w-[85%] md:w-[50%] p-6 bg-white">
+            <h3>{item.title}</h3>
+            <p class="text-center">{item.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- <div class="arrow right" id="nextBtn">&gt;</div> -->
+
+  <!-- Dots -->
+  <div class="dots-container" id="dotsContainer">
+    {elements.map((_, index) => <span class="dot" data-index={index} />)}
+  </div>
+</div>
+
+<script type="module">
+  const wrapper = document.getElementById("carruselWrapper");
+  //   const prevBtn = document.getElementById("prevBtn");
+  //   const nextBtn = document.getElementById("nextBtn");
+  const dotsContainer = document.getElementById("dotsContainer");
+  const dots = dotsContainer.querySelectorAll(".dot");
+
+  const totalItems = wrapper.children.length;
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dots.forEach((dot) => dot.classList.remove("active"));
+    dots[currentIndex].classList.add("active");
+  }
+
+  //   prevBtn.addEventListener("click", () => {
+  //     currentIndex = currentIndex > 0 ? currentIndex - 1 : totalItems - 1;
+  //     updateCarousel();
+  //     resetAutoplay();
+  //   });
+
+  //   nextBtn.addEventListener("click", () => {
+  //     currentIndex = currentIndex < totalItems - 1 ? currentIndex + 1 : 0;
+  //     updateCarousel();
+  //     resetAutoplay();
+  //   });
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      currentIndex = parseInt(dot.dataset.index);
+      updateCarousel();
+      resetAutoplay();
+    });
+  });
+
+  // Autoplay
+  let autoplay = setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateCarousel();
+  }, 4000);
+
+  function resetAutoplay() {
+    clearInterval(autoplay);
+    autoplay = setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalItems;
+      updateCarousel();
+    }, 10000);
+  }
+
+  // Inicializar
+  updateCarousel();
+</script>

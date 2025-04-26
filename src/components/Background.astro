@@ -1,0 +1,57 @@
+<style>
+  .blob {
+    animation: float 12s ease-in-out infinite alternate;
+  }
+
+  .blob:nth-child(1) {
+    background-color: #c4b5fd; /* Indigo-300 */
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    width: 320px;
+    height: 320px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+  }
+
+  .blob:nth-child(2) {
+    background-color: #a5f3fc; /* Cyan-200 */
+    border-radius: 81% 19% 80% 20% / 72% 76% 24% 28%;
+    width: 380px;
+    height: 380px;
+    top: 30%;
+    right: 10%;
+    animation-delay: 4s;
+  }
+
+  .blob:nth-child(3) {
+    background-color: #fbcfe8; /* Pink-200 */
+    border-radius: 81% 19% 33% 67% / 22% 31% 69% 78%;
+    width: 280px;
+    height: 280px;
+    bottom: 15%;
+    left: 30%;
+    animation-delay: 8s;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px) translateX(0px) scale(1);
+    }
+    25% {
+      transform: translate(40px, 40px) scale(1.15);
+    }
+    50% {
+      transform: translateY(-60px) translateX(40px) scale(1.05);
+    }
+    100% {
+      transform: translateY(60px) translateX(-30px) scale(0.95);
+    }
+  }
+</style>
+
+<div
+  class="pointer-events-none fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
+</div>
